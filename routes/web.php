@@ -20,6 +20,11 @@ Route::get('/', 'TestController@welcome');
 Route::get('/prueba',function(){
     return 'Hola soy la ruta prueba';
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin/products','ProductController@index'); //Listado
+Route::get('/admin/products/create','ProductController@create'); // Ver formulario
+Route::post('/admin/products','ProductController@store'); // Registrar datos
