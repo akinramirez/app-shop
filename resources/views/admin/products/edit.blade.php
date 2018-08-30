@@ -9,8 +9,8 @@
 
 <div class="main main-raised">
     <div class="container">
-        <div class="section">
-            <h2 class="title text-center">Registrar nuevo producto</h2>
+        <div class="section text-center">
+            <h2 class="title">Editar nuevo seleccionado</h2>
 
             @if($errors->any())
                 <div class="alert alert-danger">
@@ -22,19 +22,19 @@
                 </div>
             @endif
 
-            <form method="post" action="{{url('/admin/products')}}">
+            <form method="post" action="{{ url('/admin/products/'.$product->id.'/edit') }}">
                 {{csrf_field()}}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Nombre del Producto</label>
-                            <input id="name" type="text" class="form-control" name="name" value="{{old('name')}}">
+                            <input id="name" type="text" class="form-control" name="name" value="{{old('name',$product->name)}}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="price">Precio del producto</label>
-                            <input id="price" step="0.01" type="number" class="form-control" name="price" value="{{old('price')}}">
+                            <input id="price" type="number" step="0.01" class="form-control" name="price" value="{{old('price',$product->price)}}">
                         </div>
                     </div>
                 </div>
@@ -42,16 +42,16 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="description">Descripcion corta</label>
-                            <input id="description" type="text" class="form-control" name="description" value="{{old('description')}}">
+                            <input id="description" type="text" class="form-control" name="description" value="{{old('description',$product->description)}}">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <textarea class="form-control" placeholder="Descripcion extensa del producto" rows="5" name="long_description">{{old('description')}}</textarea>
+                        <textarea class="form-control" placeholder="Descripcion extensa del producto" rows="5" name="long_description">{{old('long_description',$product->long_description)}}</textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Registrar Producto</button>
+                <button type="submit" class="btn btn-primary">Guardar Producto</button>
                 <a href="{{url('/admin/products')}}" class="btn btn-default">Cancelar</a>
             </form>
         </div>
