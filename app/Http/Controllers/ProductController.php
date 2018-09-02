@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use function Couchbase\defaultDecoder;
 use Illuminate\Http\Request;
 use App\Product;
