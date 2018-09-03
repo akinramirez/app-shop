@@ -18,15 +18,16 @@
                     <br><br>
                     <div class="row">
                         <div class="col-md-12">
+
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Nombre</th>
-                                    <th>Descrip.</th>
-                                    <th>Cat.</th>
-                                    <th>Precio</th>
-                                    <th style="width: 200px">Opciones</th>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Descrip.</th>
+                                    <th class="text-center">Cat.</th>
+                                    <th class="text-right">Precio</th>
+                                    <th class="text-right" style="width: 200px">Opciones</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -65,6 +66,10 @@
                                                 <a href="{{url('/admin/products/'.$product->id.'/edit')}}" rel="tooltip"
                                                    class="btn btn-success btn-just-icon btn-sm" title="Editar">
                                                     <i class="material-icons">edit</i>
+                                                </a>
+                                                <a href="{{url('/admin/products/'.$product->id.'/images')}}" rel="tooltip"
+                                                   class="btn btn-warning btn-just-icon btn-sm" title="Imagenes del producto">
+                                                    <i class="material-icons">image</i>
                                                 </a>
                                                 <button type="submit" rel="tooltip"
                                                         class="btn btn-danger btn-just-icon btn-sm" title="Eliminar">

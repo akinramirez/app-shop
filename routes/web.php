@@ -35,5 +35,10 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function (){
     //Route::get('/admin/products/{id}/delete','ProductController@destroy'); // Eliminacion con get
     //Route::post('/admin/products/{id}/delete','ProductController@destroy'); // Eliminacion con post
     Route::delete('/products/{id}','ProductController@destroy'); // Eliminacion con delete
+
+    Route::get('/products/{id}/images','ImageController@index'); // Listado de imagenes
+    Route::post('/products/{id}/images','ImageController@store'); // Registrar imagenes
+    Route::delete('/products/{id}/images','ImageController@destroy'); // Eliminacion de imagenes
+    Route::get('/products/{id}/images/select/{image}','ImageController@select'); // Destacar
 });
 
