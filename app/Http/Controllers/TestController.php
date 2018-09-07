@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Product;
 use Illuminate\Http\Request;
-
 class TestController extends Controller
 {
     //
@@ -13,7 +10,7 @@ class TestController extends Controller
 //        $b = 10;
 //        $c = $a + $b;
 //        return "EL valor de la suma es $c";
-        $products = Product::all();
+        $products = Product::paginate(9);
 
 //        $varA = 5;
 //        $varB = 7;

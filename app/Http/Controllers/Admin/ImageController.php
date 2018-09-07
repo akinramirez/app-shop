@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Product;
 use App\ProductoImage;
 use File;
+use App\Http\Controllers\Controller; //SE AGREGO POR QUE SE CAMBIO EL CONTROLADOR A LA CARPETA ADMIN
+
 class ImageController extends Controller
 {
     public function index($id){

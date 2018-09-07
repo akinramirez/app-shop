@@ -24,8 +24,14 @@ Route::get('/prueba',function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/products/{id}', 'ProductController@show');
 
-Route::middleware(['auth','admin'])->prefix('admin')->group(function (){
+Route::post('/cart','CartDetailController@store');
+Route::delete('/cart','CartDetailController@destroy');
+
+Route::post('/order','CartController@update');
+
+Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(function (){
     // Con prefix('admin') ya se puede eliminar la palabra 'admin' de las rutas, ya que es una palabra en comun de todas las rutas.
     Route::get('/products','ProductController@index'); //Listado
     Route::get('/products/create','ProductController@create'); // Ver formulario
